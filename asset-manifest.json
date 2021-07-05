@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/StravaKudosTracker/static/css/main.a617e044.chunk.css",
-    "main.js": "/StravaKudosTracker/static/js/main.0339c441.chunk.js",
-    "main.js.map": "/StravaKudosTracker/static/js/main.0339c441.chunk.js.map",
-    "runtime-main.js": "/StravaKudosTracker/static/js/runtime-main.fe99130d.js",
-    "runtime-main.js.map": "/StravaKudosTracker/static/js/runtime-main.fe99130d.js.map",
-    "static/js/2.9b09aab9.chunk.js": "/StravaKudosTracker/static/js/2.9b09aab9.chunk.js",
-    "static/js/2.9b09aab9.chunk.js.map": "/StravaKudosTracker/static/js/2.9b09aab9.chunk.js.map",
-    "static/js/3.3eef92c8.chunk.js": "/StravaKudosTracker/static/js/3.3eef92c8.chunk.js",
-    "static/js/3.3eef92c8.chunk.js.map": "/StravaKudosTracker/static/js/3.3eef92c8.chunk.js.map",
+    "main.css": "/StravaKudosTracker/static/css/main.3abd2c1f.chunk.css",
+    "main.js": "/StravaKudosTracker/static/js/main.acab592b.chunk.js",
+    "main.js.map": "/StravaKudosTracker/static/js/main.acab592b.chunk.js.map",
+    "runtime-main.js": "/StravaKudosTracker/static/js/runtime-main.c04e628f.js",
+    "runtime-main.js.map": "/StravaKudosTracker/static/js/runtime-main.c04e628f.js.map",
+    "static/css/2.f7d5f77a.chunk.css": "/StravaKudosTracker/static/css/2.f7d5f77a.chunk.css",
+    "static/js/2.9ae769bc.chunk.js": "/StravaKudosTracker/static/js/2.9ae769bc.chunk.js",
+    "static/js/2.9ae769bc.chunk.js.map": "/StravaKudosTracker/static/js/2.9ae769bc.chunk.js.map",
     "index.html": "/StravaKudosTracker/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/StravaKudosTracker/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.9b09aab9.chunk.js.LICENSE.txt": "/StravaKudosTracker/static/js/2.9b09aab9.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/StravaKudosTracker/static/media/logo.6ce24c58.svg"
+    "static/css/2.f7d5f77a.chunk.css.map": "/StravaKudosTracker/static/css/2.f7d5f77a.chunk.css.map",
+    "static/css/main.3abd2c1f.chunk.css.map": "/StravaKudosTracker/static/css/main.3abd2c1f.chunk.css.map",
+    "static/js/2.9ae769bc.chunk.js.LICENSE.txt": "/StravaKudosTracker/static/js/2.9ae769bc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fe99130d.js",
-    "static/js/2.9b09aab9.chunk.js",
-    "static/css/main.a617e044.chunk.css",
-    "static/js/main.0339c441.chunk.js"
+    "static/js/runtime-main.c04e628f.js",
+    "static/css/2.f7d5f77a.chunk.css",
+    "static/js/2.9ae769bc.chunk.js",
+    "static/css/main.3abd2c1f.chunk.css",
+    "static/js/main.acab592b.chunk.js"
   ]
 }
