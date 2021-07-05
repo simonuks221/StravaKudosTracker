@@ -13,3 +13,15 @@ button{
     background-color: var(--panelColor);
     padding: 2rem;
 }
+
+.logged-in{
+    background-color: var(--panelColor);
+    padding: 2rem;
+}
+
+a{
+    background-color: var(--primaryColor);
+    border: none;
+    text-align: center;
+    appearance: button;
+}
