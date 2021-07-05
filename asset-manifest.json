@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/StravaKudosTracker/static/css/main.3abd2c1f.chunk.css",
-    "main.js": "/StravaKudosTracker/static/js/main.acab592b.chunk.js",
-    "main.js.map": "/StravaKudosTracker/static/js/main.acab592b.chunk.js.map",
+    "main.js": "/StravaKudosTracker/static/js/main.f45c3367.chunk.js",
+    "main.js.map": "/StravaKudosTracker/static/js/main.f45c3367.chunk.js.map",
     "runtime-main.js": "/StravaKudosTracker/static/js/runtime-main.c04e628f.js",
     "runtime-main.js.map": "/StravaKudosTracker/static/js/runtime-main.c04e628f.js.map",
     "static/css/2.f7d5f77a.chunk.css": "/StravaKudosTracker/static/css/2.f7d5f77a.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.f7d5f77a.chunk.css",
     "static/js/2.9ae769bc.chunk.js",
     "static/css/main.3abd2c1f.chunk.css",
-    "static/js/main.acab592b.chunk.js"
+    "static/js/main.f45c3367.chunk.js"
   ]
 }
