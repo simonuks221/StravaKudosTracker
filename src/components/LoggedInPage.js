@@ -6,14 +6,30 @@ const LoggedInPage = () => {
     const context = useContext(AuthContext)
 
     const GetAccesToken = async () => {
-        const response = await fetch("https://www.strava.com/api/v3/athlete", {
-            headers: {
-                "Authorization": "Bearer 0aa10c7c6e2f93896751ce05d4e6b0c04ea01f21"
+        try{
+            const response = await fetch(`https://www.strava.com/api/v3/oauth/token?client_id=${context.auth.clientId}&client_secret=${context.auth.clientSecret}&code=${context.auth.code}&grant_type=authorization_code`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            if(response.ok){
+                const data = await response.json()
+                context.changeAuth({...context.auth, data})
+            }else{
+                context.changeState('preLogin')
+                window.history.replaceState({}, document.title, '/');
             }
-        })
-        const data = await response.json()
-        console.log(data)
+            
+        }
+        catch(e){
+            console.log('error fetching token: ', e)
+        }
     }
+
+    useEffect(() => {
+        GetAccesToken()
+    }, [])
 
     return (
         <div className = 'logged-in'>
