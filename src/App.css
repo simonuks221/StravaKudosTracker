@@ -9,19 +9,48 @@ button{
     text-align: center;
 }
 
-.pre-login{
+.page{
     background-color: var(--panelColor);
-    padding: 2rem;
+    margin: 2rem auto;
+    padding: 0.25rem;
+    border-radius: .25rem;
 }
+
+.pre-login{
+    width: 50%;
+}
+
+.authorization{
+    width: 50%;
+}
+
+.logged-in{
+    width: 90%;
+}
+
+.link-button{
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: var(--primaryColor) !important;
+    padding: 5px;
+    color: black !important;
+    font-size: large;
+    
+    display: inline-block;
+}
+
+.pre-login .link-button{
+    width: 50%;
+}
+
+.logged-in .link-button{
+    width: 90%;
+}
+
+
 
 .logged-in{
     background-color: var(--panelColor);
     padding: 2rem;
 }
 
-a{
-    background-color: var(--primaryColor);
-    border: none;
-    text-align: center;
-    appearance: button;
-}
