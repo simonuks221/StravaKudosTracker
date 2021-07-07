@@ -1,7 +1,6 @@
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const KudosChart = (kudosData) => {
-
     const CustomTooltip = ({active, payload, label}) => {
         if (active && payload && payload.length) {
             return (
@@ -17,10 +16,11 @@ const KudosChart = (kudosData) => {
 
     return (
       <div className = 'secondary-panel'>
+        <ResponsiveContainer width="100%" height={kudosData.kudosData.length * 75}>
           <BarChart
       layout= 'vertical'
       width={800}
-      height={300}
+      height={kudosData.kudosData.length * 75}
       data={kudosData.kudosData}
       margin={{
         top: 5,
@@ -35,7 +35,9 @@ const KudosChart = (kudosData) => {
         <Tooltip content={<CustomTooltip/>}/>
         <Legend/>
     </BarChart>
+    </ResponsiveContainer>
       </div>
+      
     )
 }
 

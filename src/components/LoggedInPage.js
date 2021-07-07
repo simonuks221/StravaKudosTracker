@@ -20,7 +20,12 @@ const LoggedInPage = () => {
                 const data = await response.json()
                 return data
             }else{
-                console.log('Couldnt get all activities: ', response)
+                if(response.status === 429){
+                    alert('Too many requests, please try again later')
+                }else{
+                    console.log('Couldnt get all activities: ', response)
+                }
+               
             }
         }
         catch(e){
@@ -39,7 +44,12 @@ const LoggedInPage = () => {
                 const data = await response.json()
                 return data;
             }else{
-                console.log('Couldnt get kudoers of the activity: ', response)
+                if(response.status === 429){
+                    alert('Too many requests, please try again later')
+                }else{
+                    console.log('Couldnt get kudoers of the activity: ', response)
+                }
+                
             }
         }
         catch(e){
@@ -82,6 +92,21 @@ const LoggedInPage = () => {
                 name: 'Page B',
                 surname: 'Baltr',
                 kudos: 5,
+              },
+              {
+                name: 'Page C',
+                surname: 'Baltr',
+                kudos: 3,
+              },
+              {
+                name: 'Page C',
+                surname: 'Baltr',
+                kudos: 3,
+              },
+              {
+                name: 'Page C',
+                surname: 'Baltr',
+                kudos: 3,
               },
               {
                 name: 'Page C',

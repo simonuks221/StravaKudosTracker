@@ -1,5 +1,5 @@
 import { Row, Col } from "react-bootstrap"
-import { useEffect, useState, useContext } from "react"
+import { useEffect, useContext } from "react"
 import { AuthContext } from "../App.js"
 
 import {ReactComponent as GitHubLogo} from '../github.svg'
