@@ -17,7 +17,6 @@ const AuthorizationPage = () => {
             if(response.ok){
                 const data = await response.json()
                 context.changeAuth({...context.auth, data})
-                console.log(context, ' ', context.changeState)
                 context.changeState('loggedIn')
 
             }else{

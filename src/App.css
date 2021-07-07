@@ -1,56 +1,84 @@
-:root{
-    --panelColor: rgb(156, 143, 143);
-    --primaryColor: rgb(209, 109, 27);
+:root {
+	--backgroundColor: #f7f7fa;
+	--panelColor: #ffffff;
+	--primaryColor: #fc5200;
 }
 
-button{
-    background-color: var(--primaryColor);
-    border: none;
-    text-align: center;
+body {
+	background-color: var(--backgroundColor) !important;
 }
 
-.page{
-    background-color: var(--panelColor);
-    margin: 2rem auto;
-    padding: 0.25rem;
-    border-radius: .25rem;
+button {
+	background-color: var(--primaryColor);
+	border: none;
+	text-align: center;
 }
 
-.pre-login{
-    width: 50%;
+.page {
+	background-color: var(--panelColor);
+	margin: 2rem auto;
+	padding: 0.25rem;
 }
 
-.authorization{
-    width: 50%;
+.pre-login {
+	width: 30%;
 }
 
-.logged-in{
-    width: 90%;
+.authorization {
+	width: 50%;
 }
 
-.link-button{
-    border-radius: 5px;
-    text-decoration: none;
-    background-color: var(--primaryColor) !important;
-    padding: 5px;
-    color: black !important;
-    font-size: large;
-    
-    display: inline-block;
+.logged-in {
+	width: 90%;
 }
 
-.pre-login .link-button{
-    width: 50%;
+.secondary-panel {
+	background-color: var(--backgroundColor);
+	margin: 0 auto;
+	padding: 0.25rem;
+	height: 100%;
 }
 
-.logged-in .link-button{
-    width: 90%;
+.chart-placeholder {
+	width: 90%;
+	text-align: center;
+	line-height: 7rem;
 }
 
-
-
-.logged-in{
-    background-color: var(--panelColor);
-    padding: 2rem;
+.chart-placeholder h4 {
+	display: inline-block;
+	vertical-align: middle;
+	line-height: normal;
 }
 
+.link-button {
+	color: white !important;
+	border-radius: 3px;
+	text-decoration: none;
+	background-color: var(--primaryColor) !important;
+	padding: 5px;
+	font-size: large;
+	display: inline-block;
+}
+
+.pre-login .link-button {
+	width: 80%;
+}
+
+.logged-in .link-button {
+	width: 90%;
+}
+
+.logged-in {
+	background-color: var(--panelColor);
+	padding: 2rem;
+}
+
+.chart-tooltip {
+	border-radius: 0.25rem;
+	background-color: var(--panelColor);
+	opacity: 0.5;
+}
+.chart-tooltip p {
+	opacity: 1 !important;
+}
