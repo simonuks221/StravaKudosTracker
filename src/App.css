@@ -40,7 +40,7 @@ button {
 }
 
 .chart-placeholder {
-	width: 90%;
+	width: 100%;
 	text-align: center;
 	line-height: 7rem;
 }
@@ -77,8 +77,17 @@ button {
 .chart-tooltip {
 	border-radius: 0.25rem;
 	background-color: var(--panelColor);
-	opacity: 0.5;
+	padding: 5px;
+	text-align: start;
+	line-height: 1rem;
 }
 .chart-tooltip p {
-	opacity: 1 !important;
+	padding: 0.5rem 0;
+	margin: 0;
+}
+
+hr.solid {
+	border-top: 1px solid gray;
+	padding: 0;
+	margin: 0;
 }
