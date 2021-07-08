@@ -1,5 +1,5 @@
 import { Row, Col } from "react-bootstrap"
-import { useEffect, useContext } from "react"
+import { useEffect, useContext, useState } from "react"
 import { AuthContext } from "../App.js"
 
 import {ReactComponent as GitHubLogo} from '../github.svg'
@@ -7,9 +7,16 @@ import {ReactComponent as LinkedInLogo} from '../linkedin.svg'
 
 const PreLoginPage = () => {
     const context = useContext(AuthContext)
+    const [stravaRedirectTo, changeStravaRedirectTo] = useState('')
 
     useEffect(() => {
         const url = window.location
+        if(url.hostname === 'localhost'){ //Checks if development server
+            changeStravaRedirectTo('http://localhost:3000')
+        }else{ //If production server
+            changeStravaRedirectTo('https://simonuks221.github.io/StravaKudosTracker')
+        }
+        console.log(stravaRedirectTo)
         const code = new URLSearchParams(url.search).get('code')
         if(code){
             context.changeAuth({...context.auth, code: code})
@@ -27,7 +34,7 @@ const PreLoginPage = () => {
                 </Row>
                 <Row className = 'pt-5'>
                     <Col className = 'text-center'>
-                        <a className = 'text-center link-button' href = {`https://www.strava.com/oauth/authorize?client_id=${context.auth.clientId}&response_type=code&redirect_uri=http://localhost:3000&approval_prompt=force&scope=activity:read`}>Login to strava</a>
+                        <a className = 'text-center link-button' href = {`https://www.strava.com/oauth/authorize?client_id=${context.auth.clientId}&response_type=code&redirect_uri=${stravaRedirectTo}&approval_prompt=force&scope=activity:read`}>Login to strava</a>
                         <div className = 'pt-5'>
                             <p>Made by Simonas Riauka</p>
                             <a className = 'about-links' href = 'https://github.com/simonuks221'><GitHubLogo/></a>

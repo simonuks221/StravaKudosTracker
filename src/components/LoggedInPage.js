@@ -5,12 +5,12 @@ import KudosChart from "./KudosChart.js"
 
 const LoggedInPage = () => {
     const context = useContext(AuthContext)
-    const [kudosData, changeKudosData] = useState()
+    const [kudosData, changeKudosData] = useState([])
     const [activityCount, changeActivityCount] = useState(0)
     const [dataQueried, changeDataQueried] = useState(false)
+    const [allActivities, changeAllActivities] = useState([])
 
     const GetAllAthleteActivities = async () => {
-        try{
             const response = await fetch('https://www.strava.com/api/v3/athlete/activities', {
                 method: 'GET',  
                 headers: {
@@ -22,23 +22,14 @@ const LoggedInPage = () => {
                 return data
             }else{
                 if(response.status === 429){
-                    alert('Too many requests, please try again later 1')
-                    return null
+                    throw(new Error('Too mnay requests please try again later, code: 0001'))
                 }else{
-                    console.log('Couldnt get all activities: ', response)
-                    return null
+                    throw(new Error('Couldnt get all activities: ' + response))
                 }
-               
             }
-        }
-        catch(e){
-            console.log('Error encountered while geeting all activities: ', e)
-            return null
-        }
     }
 
     const GetAllActivityKudoers = async(activityId) => {
-        try{
             const response = await fetch(`https://www.strava.com/api/v3/activities/${activityId}/kudos`, {
                 method: 'GET',  
                 headers: {
@@ -49,51 +40,57 @@ const LoggedInPage = () => {
                 return data;
             }else{
                 if(response.status === 429){
-                    alert('Too many requests, please try again later 2')
-                    return null
+                    throw(new Error('Too mnay requests please try again later, code: 0002'))
                 }else{
-                    console.log('Couldnt get kudoers of the activity: ', response)
-                    return null
+                    throw(new Error('Couldnt get kudoers of the activity: ' + response))
                 }
                 
             }
-        }
-        catch(e){
-            console.log('Error encountered while geeting all kudoers: ', e)
-            return null
-        }
     }
 
     const GetTopKudoers = async () => {
-        const topKudoers = []
-        const allActivityData = await GetAllAthleteActivities()
-        const activitiesCounted = 0
-        if(allActivityData){
-            allActivityData.forEach(async activity => {
-                const activityKudoers = await GetAllActivityKudoers(activity.id)
-                if(activityKudoers){
-                    for(let i = 0; i < activityKudoers.length; i++){
-                        const index = topKudoers.findIndex((element) => element.name === activityKudoers[i].firstname)
-                        if(index === -1){ //Kudoer does not exist
-                            topKudoers.push({name: activityKudoers[i].firstname, surname: activityKudoers[i].lastname, kudos: 1})
+        ClearData()
+        try{
+            const allActivityData = await GetAllAthleteActivities()
+            var activitiesCounted = 0
+            if(allActivityData){
+                changeAllActivities(allActivityData)
+                await allActivityData.forEach(async activity => {
+                        const activityKudoers = await GetAllActivityKudoers(activity.id)
+                        if(activityKudoers){
+                            for(let i = 0; i < activityKudoers.length; i++){
+                                const index = kudosData.findIndex((element) => element.name === activityKudoers[i].firstname)
+                                if(index === -1){ //Kudoer does not exist
+                                    const newArray = kudosData
+                                    newArray.push({name: activityKudoers[i].firstname, surname: activityKudoers[i].lastname, kudos: 1})
+                                    changeKudosData(newArray)
+                                }
+                                else{ //Kudoer exists
+                                    const newArray = kudosData
+                                    newArray[index] = {...newArray[index], kudos: newArray[index].kudos + 1}
+                                    changeKudosData(newArray)
+                                }
+                            }
+                            activitiesCounted = activitiesCounted + 1
+                            changeActivityCount(activitiesCounted)
                         }
-                        else{ //Kudoer exists
-                            topKudoers[index] = {...topKudoers[index], kudos: topKudoers[index].kudos + 1}
+                        else{
+                            throw(new Error('Code 0003'))
                         }
                     }
-                    activitiesCounted++
-                }
-                else{
-                    throw('Didnt get break the loop')
-                }
-            })
-            changeActivityCount(activitiesCounted)
-            changeKudosData(topKudoers)
-            changeDataQueried(true)
+                )
+                changeActivityCount(activitiesCounted)
+                //changeKudosData(Array.from(topKudoers))
+                changeDataQueried(true)
+            }
+        }
+        catch(e){
+            alert(e)
         }
     }
 
     const GetDummyData = () => {
+        ClearData()
         const data = [
             {
                 name: 'Petras1',
@@ -127,20 +124,19 @@ const LoggedInPage = () => {
               }
         ]
         changeActivityCount(7)
-        changeKudosData(Array.from(data))
+        changeKudosData(data)
         changeDataQueried(true)
     }
 
     const ClearData = () => {
         changeActivityCount(0)
-        changeKudosData({})
+        changeKudosData([])
         changeDataQueried(false)
     }
 
     const SortArray = (arrayToSort) => { //Sorts by kudos amount
         if(arrayToSort){
-            console.log(arrayToSort, ' ', typeof(arrayToSort))
-            return arrayToSort.sort((a, b) => { return b.kudos - a.kudos})
+            return arrayToSort.sort((a, b) => {return b.kudos - a.kudos})
         }
         return ''
     }
@@ -163,7 +159,6 @@ const LoggedInPage = () => {
                 }else{
                     console.log('Couldnt deauthorize: ', response)
                 }
-                
             }
         }
         catch(e){
@@ -190,7 +185,6 @@ const LoggedInPage = () => {
                         <button className = 'link-button mb-5' onClick = {GetDummyData}>Get dummy data</button>
                         {dataQueried? <button className = 'link-button mb-5' onClick = {ClearData}>Clear data</button>: ''}
                         <button className = 'link-button' onClick = {Deauthorize}>Log out</button>
-
                     </Col>
                 </Row>
             </Container>

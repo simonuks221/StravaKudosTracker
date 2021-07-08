@@ -1,7 +1,10 @@
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { useEffect } from 'react';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useEffect, useState } from 'react';
 
 const KudosChart = ({kudosData, activityCount}) => {
+
+    const[state, setState] = useState()
+
     const CustomTooltip = ({active, payload, label}) => {
         if (active && payload && payload.length) {
             return (
@@ -16,6 +19,10 @@ const KudosChart = ({kudosData, activityCount}) => {
         }
     }
 
+    useEffect(() => {
+        setState(Date.now())
+    }, [kudosData])
+
     return (
       <div className = 'secondary-panel'>
         {kudosData.length === 0? <p>Looks like you don't have any Kudos given to you :(</p>:
@@ -23,7 +30,7 @@ const KudosChart = ({kudosData, activityCount}) => {
           <BarChart
       layout= 'vertical'
       width={800}
-      height={kudosData.length * 75}
+      height={activityCount * 75}
       data={kudosData}
       margin={{
         top: 5,
