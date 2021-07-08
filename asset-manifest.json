@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/StravaKudosTracker/static/css/main.3abd2c1f.chunk.css",
-    "main.js": "/StravaKudosTracker/static/js/main.f45c3367.chunk.js",
-    "main.js.map": "/StravaKudosTracker/static/js/main.f45c3367.chunk.js.map",
+    "main.css": "/StravaKudosTracker/static/css/main.2d0bcf57.chunk.css",
+    "main.js": "/StravaKudosTracker/static/js/main.ff36372c.chunk.js",
+    "main.js.map": "/StravaKudosTracker/static/js/main.ff36372c.chunk.js.map",
     "runtime-main.js": "/StravaKudosTracker/static/js/runtime-main.c04e628f.js",
     "runtime-main.js.map": "/StravaKudosTracker/static/js/runtime-main.c04e628f.js.map",
     "static/css/2.f7d5f77a.chunk.css": "/StravaKudosTracker/static/css/2.f7d5f77a.chunk.css",
-    "static/js/2.9ae769bc.chunk.js": "/StravaKudosTracker/static/js/2.9ae769bc.chunk.js",
-    "static/js/2.9ae769bc.chunk.js.map": "/StravaKudosTracker/static/js/2.9ae769bc.chunk.js.map",
+    "static/js/2.8c663062.chunk.js": "/StravaKudosTracker/static/js/2.8c663062.chunk.js",
+    "static/js/2.8c663062.chunk.js.map": "/StravaKudosTracker/static/js/2.8c663062.chunk.js.map",
     "index.html": "/StravaKudosTracker/index.html",
     "static/css/2.f7d5f77a.chunk.css.map": "/StravaKudosTracker/static/css/2.f7d5f77a.chunk.css.map",
-    "static/css/main.3abd2c1f.chunk.css.map": "/StravaKudosTracker/static/css/main.3abd2c1f.chunk.css.map",
-    "static/js/2.9ae769bc.chunk.js.LICENSE.txt": "/StravaKudosTracker/static/js/2.9ae769bc.chunk.js.LICENSE.txt"
+    "static/css/main.2d0bcf57.chunk.css.map": "/StravaKudosTracker/static/css/main.2d0bcf57.chunk.css.map",
+    "static/js/2.8c663062.chunk.js.LICENSE.txt": "/StravaKudosTracker/static/js/2.8c663062.chunk.js.LICENSE.txt",
+    "static/media/github.3b21c250.svg": "/StravaKudosTracker/static/media/github.3b21c250.svg",
+    "static/media/linkedin.98956d29.svg": "/StravaKudosTracker/static/media/linkedin.98956d29.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.c04e628f.js",
     "static/css/2.f7d5f77a.chunk.css",
-    "static/js/2.9ae769bc.chunk.js",
-    "static/css/main.3abd2c1f.chunk.css",
-    "static/js/main.f45c3367.chunk.js"
+    "static/js/2.8c663062.chunk.js",
+    "static/css/main.2d0bcf57.chunk.css",
+    "static/js/main.ff36372c.chunk.js"
   ]
 }
