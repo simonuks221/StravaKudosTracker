@@ -4,6 +4,5 @@ My self made strava kudos amount tracking app, that shows how many kudos who giv
 Done using ReactJS framework, html, css, Bootstrap.
 Used Strava API with Auth2.0.
 </pre>
-<h3>Features include:</h3>
 
 <p> Done by and for Simonas Riauka</p>
